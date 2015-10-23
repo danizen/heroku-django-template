@@ -1,12 +1,17 @@
 # Heroku Django Starter Template
 
-An utterly fantastic project starter template for Django 1.8.
+An utterly fantastic project starter template for Django 1.8, customized by me.
 
 ## Features
 
 - Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
 - Enhancements to Django's static file serving functionality via WhiteNoise
 - Enhancements to Django's database functionality via django-postgrespool and dj-database-url
+
+## Differences from Heroku
+
+- Added Werkzeug and django-extensions
+- Added  multiple settings files, for local and heroku
 
 ## How to Use
 
@@ -20,7 +25,7 @@ To use this project, follow these steps:
 
 Using this template to create a new Django app is easy::
 
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
+    $ django-admin.py startproject --template=https://github.com/danizen/heroku-django-template/ helloworld
 
 You can replace ``helloworld`` with your desired project name.
 
