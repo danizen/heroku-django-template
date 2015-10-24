@@ -10,8 +10,8 @@ An utterly fantastic project starter template for Django 1.8, customized by me.
 
 ## Differences from Heroku
 
-- Added Werkzeug and django-extensions
-- Added  multiple settings files, for local and heroku
+- Added Werkzeug, django-extensions, and django-debug-toolbar
+- Added multiple settings files, one for heroku, and one local that adds DEBUG and TEMPLATE_DEBUG
 
 ## How to Use
 
@@ -25,7 +25,7 @@ To use this project, follow these steps:
 
 Using this template to create a new Django app is easy::
 
-    $ django-admin.py startproject --template=https://github.com/danizen/heroku-django-template/ helloworld
+    $ django-admin.py startproject --template=https://github.com/danizen/heroku-django-template/archive/master.zip helloworld
 
 You can replace ``helloworld`` with your desired project name.
 
@@ -36,9 +36,10 @@ You can replace ``helloworld`` with your desired project name.
     $ git commit -m "Initial commit"
 
     $ heroku create
-    $ git push heroku master
+    $ git push heroku master                # installs requirements, collects static files
 
-    $ heroku run python manage.py migrate
+    $ heroku run python manage.py migrate   # initializes the database
+    $ heroku open                           # opens the browser
 
 ## Further Reading
 
