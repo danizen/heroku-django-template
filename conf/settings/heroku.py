@@ -10,10 +10,10 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 """
 
 import os
-from os.path import dirname, abspath
+from os.path import dirname, abspath, join
 import dj_database_url
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# Build paths inside the project like this: join(BASE_DIR, ...)
 BASE_DIR = dirname(dirname(abspath(__file__)))
 
 
@@ -32,12 +32,12 @@ TEMPLATE_DEBUG = False
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'project_name',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,12 +51,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'conf.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ join(BASE_DIR, 'templates') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'project.wsgi.application'
+WSGI_APPLICATION = 'conf.wsgi.application'
 
 
 # Database
@@ -102,7 +102,7 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    join(BASE_DIR, 'static'),
 )
 
 # Simplified static file serving.
