@@ -19,7 +19,7 @@ DEBUG = True
 
 # Application definition
 
-INSTALLED_APPS += ( 'debug_toolbar', 'django_extensions', )
+INSTALLED_APPS += ( 'debug_toolbar', )
 
 #MIDDLEWARE_CLASSES += ( )
 
