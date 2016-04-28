@@ -14,7 +14,7 @@ from os.path import dirname, abspath, join
 import dj_database_url
 
 # Build paths inside the project like this: join(BASE_DIR, ...)
-BASE_DIR = dirname(dirname(abspath(__file__)))
+BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
